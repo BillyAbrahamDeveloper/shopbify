@@ -21,7 +21,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
         <Image
           src={product.imageUrl}
           alt={product.name}
-          width={800}
+          width={1500}
           height={400}
           className='h-48 object-cover'
         />
