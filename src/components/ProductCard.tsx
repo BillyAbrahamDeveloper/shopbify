@@ -21,12 +21,12 @@ const ProductCard = ({ product }: ProductCardProps) => {
         <Image
           src={product.imageUrl}
           alt={product.name}
-          width={1500}
+          width={500}
           height={400}
           className='h-48 object-cover'
         />
       </figure>
-      <div className=' card-body'>
+      <div className=' card-body  overflow-auto'>
         <h2 className=' card-title '>{product.name}</h2>
         {isNew && <div className=' badge badge-info text-white '>New</div>}
         <p>{product.description}</p>
