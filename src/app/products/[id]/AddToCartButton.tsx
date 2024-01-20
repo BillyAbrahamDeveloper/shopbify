@@ -13,7 +13,7 @@ const AddToCartButton = ({ productId }: AddToCartButtonProps) => {
         className='btn btn-neutral text-lg text-white flex items-center'
         onClick={() => {}}
       >
-        Add To Cart
+        Add to Cart
         <FaShoppingCart size={20} />
       </button>
     </div>
