@@ -28,7 +28,6 @@ const Navbar = async () => {
         </div>
         <div className='flex-none gap-2'>
           <form action={searchProduct}>
-            {' '}
             <div className='form-control'>
               <input
                 type='text'
