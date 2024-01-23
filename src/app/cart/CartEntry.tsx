@@ -41,7 +41,7 @@ const CartEntry = ({
             {product.name}
           </Link>
 
-          <div className=''>Price:{FormatPrice(product.price)}</div>
+          <div className=' text-left'>Price:{FormatPrice(product.price)}</div>
 
           <div className=' my-1 flex items-center gap-3'>
             Quantity:
