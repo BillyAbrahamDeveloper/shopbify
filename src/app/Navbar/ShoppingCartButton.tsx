@@ -24,7 +24,7 @@ const ShoppingCartButton = ({ cart }: ShoppingCartButtonProps) => {
           <MdOutlineShoppingCart size={25} />
           <span
             className={
-              cart?.size === 0
+              cart?.items.length === 0
                 ? ''
                 : 'badge badge-sm indicator-item bg-purple-500 text-white py-2.5'
             }

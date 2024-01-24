@@ -62,7 +62,7 @@ const CartEntry = ({
           <div className=' flex items-center gap-3'>
             Total:{FormatPrice(product.price * quantity)}
             {isPending && (
-              <span className=' loading loading-spinner loading-sm' />
+              <span className='loading loading-spinner loading-md' />
             )}
           </div>
         </div>
