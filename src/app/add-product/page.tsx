@@ -1,7 +1,9 @@
 import FormSubmitButton from '@/components/FormSubmitButton';
 import { prisma } from '@/lib/db/prisma';
 import { Metadata } from 'next';
+import { getServerSession } from 'next-auth';
 import { redirect } from 'next/navigation';
+import { authOptions } from '../api/auth/[...nextauth]/route';
 
 export const metadata: Metadata = {
   title: 'Add Product - Shopbify',
@@ -10,6 +12,11 @@ export const metadata: Metadata = {
 
 async function addProduct(formData: FormData) {
   'use server';
+
+  const session = await getServerSession(authOptions);
+  if (!session) {
+    redirect('/api/auth/signin?callbackUrl=/add-product');
+  }
 
   const name = formData.get('name')?.toString();
   const description = formData.get('description')?.toString();
@@ -31,7 +38,12 @@ async function addProduct(formData: FormData) {
   redirect('/');
 }
 
-const AddProductPage = () => {
+const AddProductPage = async () => {
+  const session = await getServerSession(authOptions);
+
+  if (!session) {
+    redirect('/api/auth/signin?callbackUrl=/add-product');
+  }
   return (
     <div>
       <h1 className='mb-3 text-4xl font-bold text-emerald-400 '>Add Product</h1>
